@@ -1,11 +1,27 @@
 import Image from 'next/image'
+import {
+  FaGithubSquare,
+  FaTwitterSquare,
+  FaBlogger,
+  FaTwitter,
+} from 'react-icons/fa'
+import {
+  Stack,
+  Icon,
+  Text,
+  Center,
+  Box,
+  Circle,
+  Square,
+} from '@chakra-ui/react'
+import Link from 'next/link'
 
 import styles from './profile.module.css'
 import utilStyles from '../styles/utils.module.css'
 
 export const Profile = () => {
   return (
-    <div className={styles.content}>
+    <Box className={styles.content}>
       <Image
         src="/icon.jpg"
         alt="icon"
@@ -13,7 +29,42 @@ export const Profile = () => {
         height={160}
         className={utilStyles.borderCircle}
       />
-      <h1 className={utilStyles.heading2Xl}>namekosiru</h1>
-    </div>
+      <Text className={utilStyles.heading2Xl} mt={1} pb={2}>
+        namekosiru
+      </Text>
+
+      <Stack direction="row">
+        <Link href="https://github.com/namekosiru">
+          <a className={styles.link}>
+            <Center bg="#333" className={styles.Center}>
+              <Icon as={FaGithubSquare} w={5} h={5} color="white" />
+              <Text fontSize="lg" color="white" pl={1}>
+                Github
+              </Text>
+            </Center>
+          </a>
+        </Link>
+        <Link href="https://twitter.com/Shinori0425">
+          <a className={styles.link}>
+            <Center bg="#00ACEE" className={styles.Center}>
+              <Icon as={FaTwitterSquare} w={5} h={5} color="white" />
+              <Text fontSize="lg" color="white" pl={1}>
+                Twitter
+              </Text>
+            </Center>
+          </a>
+        </Link>
+        <Link href="https://namekosiru.hatenablog.com/">
+          <a className={styles.link}>
+            <Center bg="#6cc644" className={styles.Center}>
+              <Icon as={FaBlogger} w={5} h={5} color="white" />
+              <Text fontSize="lg" color="white" pl={1}>
+                Blog
+              </Text>
+            </Center>
+          </a>
+        </Link>
+      </Stack>
+    </Box>
   )
 }
