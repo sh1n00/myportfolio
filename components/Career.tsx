@@ -26,7 +26,7 @@ export const Career = (props: Careers) => {
   return (
     <Box>
       <Text fontSize="3xl" align="center" pt={20}>
-        Carrer
+        Career
       </Text>
       <Box className={styles.timeline}>
         <OrderedList className={styles.list}>

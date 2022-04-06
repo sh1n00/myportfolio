@@ -2,10 +2,12 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 
+import { ReactNode } from 'react'
+
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 
-function Layout({ children }) {
+function Layout({ children }: { children: ReactNode }) {
   return (
     <div className={styles.container}>
       <Head>
