@@ -3,7 +3,7 @@ import type { NextPage } from 'next'
 import Layout from '../components/Layout'
 import { Profile } from '../components/Profile'
 import { Career } from '../components/Career'
-import { CareerData } from '../components/data'
+import { CareerData } from '../components/data/CareerData'
 
 const Home: NextPage = () => {
   return (
