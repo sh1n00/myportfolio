@@ -1,0 +1,41 @@
+.timeline {
+  width: 96%;
+  max-width: 940px;
+  margin: 28px auto;
+  border: 1px solid #eeeeee;
+}
+
+.list {
+  padding: 40px 0;
+}
+
+.item {
+  display: flex;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.date {
+  width: 25%;
+  padding: 0 0 0 20px;
+  color: #888888;
+  font-weight: bold;
+}
+
+.content {
+  position: relative;
+  width: 80%;
+  padding: 0 20px 60px 30px;
+  border-left: 1px solid #aaaaaa;
+}
+
+.content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: #cecbca;
+  color: #888888;
+  border-radius: 10px;
+}

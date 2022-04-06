@@ -1,20 +1,7 @@
 import Image from 'next/image'
-import {
-  FaGithubSquare,
-  FaTwitterSquare,
-  FaBlogger,
-  FaTwitter,
-} from 'react-icons/fa'
-import {
-  Stack,
-  Icon,
-  Text,
-  Center,
-  Box,
-  Circle,
-  Square,
-} from '@chakra-ui/react'
 import Link from 'next/link'
+import { FaGithubSquare, FaTwitterSquare, FaBlogger } from 'react-icons/fa'
+import { Stack, Icon, Text, Center, Box, Square } from '@chakra-ui/react'
 
 import styles from './profile.module.css'
 import utilStyles from '../styles/utils.module.css'
@@ -29,8 +16,11 @@ export const Profile = () => {
         height={160}
         className={utilStyles.borderCircle}
       />
-      <Text className={utilStyles.heading2Xl} mt={1} pb={2}>
+      <Text className={utilStyles.heading2Xl} mt={1}>
         namekosiru
+      </Text>
+      <Text mt={0} pb={3}>
+        AR VR CV HCI
       </Text>
 
       <Stack direction="row">

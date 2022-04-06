@@ -1,17 +1,15 @@
 import type { NextPage } from 'next'
-import { useEffect, useState } from 'react'
-import { Box, chakra } from '@chakra-ui/react'
 
 import Layout from '../components/Layout'
-import styles from '../styles/Home.module.css'
-import utilStyle from '../styles/utils.module.css'
 import { Profile } from '../components/Profile'
+import { Career } from '../components/Career'
+import { CareerData } from '../components/data'
 
 const Home: NextPage = () => {
   return (
     <Layout>
       <Profile></Profile>
-      <Box>aaa</Box>;
+      <Career careers={CareerData} />
     </Layout>
   )
 }
