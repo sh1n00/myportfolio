@@ -8,6 +8,7 @@ import {
   ListItem,
   Heading,
 } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 
 import styles from './career.module.css'
 
@@ -29,7 +30,13 @@ export const Career = (props: Careers) => {
       <Text fontSize="3xl" align="center" pt={20}>
         Career
       </Text>
-      <Box className={styles.timeline}>
+      <Box
+        className={styles.timeline}
+        as={motion.div}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <OrderedList className={styles.list}>
           {careers.map((career, i) => (
             <CareerItem
@@ -54,7 +61,14 @@ const CareerItem = (props: Career) => {
       <Box className={styles.content}>
         <Link href={url}>
           <a>
-            <Heading size="lg" className={styles.heading}>
+            <Heading
+              as={motion.div}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.9 }}
+              transition="0.05s linear"
+              size="lg"
+              className={styles.heading}
+            >
               {title}
             </Heading>
           </a>

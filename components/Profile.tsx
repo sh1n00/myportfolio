@@ -3,6 +3,8 @@ import Link from 'next/link'
 
 import { Stack, Icon, Text, Center, Box, Square } from '@chakra-ui/react'
 
+import { motion } from 'framer-motion'
+
 import styles from './profile.module.css'
 import utilStyles from '../styles/utils.module.css'
 
@@ -10,7 +12,13 @@ import { ProfileData } from './data/ProfileData'
 
 export const Profile = () => {
   return (
-    <Box className={styles.content}>
+    <Box
+      as={motion.div}
+      className={styles.content}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+    >
       <Image
         src="/icon.jpg"
         alt="icon"
