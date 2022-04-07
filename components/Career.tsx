@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import Link from 'next/link'
 import {
   Text,
   Box,
@@ -51,7 +52,13 @@ const CareerItem = (props: Career) => {
     <ListItem className={styles.item}>
       <Box className={styles.date}>{date}</Box>
       <Box className={styles.content}>
-        <Heading size="lg">{title}</Heading>
+        <Link href={url}>
+          <a>
+            <Heading size="lg" className={styles.heading}>
+              {title}
+            </Heading>
+          </a>
+        </Link>
         <Text>{content}</Text>
       </Box>
     </ListItem>

@@ -1,7 +1,7 @@
 .timeline {
   width: 96%;
   max-width: 940px;
-  margin: 28px auto;
+  margin: 0px 28px auto auto;
   border: 1px solid #eeeeee;
 }
 
@@ -38,4 +38,15 @@
   background-color: #cecbca;
   color: #888888;
   border-radius: 10px;
+}
+
+.heading {
+  color: #161515;
+  text-decoration: none;
+  opacity: 1;
+  font-weight: bold;
+}
+
+.heading:hover {
+  opacity: 0.99;
 }
