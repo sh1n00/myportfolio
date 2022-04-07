@@ -24,6 +24,12 @@ export const CareerData = [
     url: 'https://drive.google.com/file/d/1qBQWccNYS4hlHhaD3wvl3LQZyWFUiPOn/view',
   },
   {
+    title: 'いい生活',
+    date: '2021.8',
+    content: 'React, Typescriptを用いたフロントエンド開発',
+    url: 'https://e-seikatsu.snar.jp/jobboard/detail.aspx?id=dJLKHy0DMKGk7KTdhLisOA',
+  },
+  {
     title: '株式会社船井総合研究所',
     date: '2020.11-2021.8',
     content: '画像認識モジュールの開発',

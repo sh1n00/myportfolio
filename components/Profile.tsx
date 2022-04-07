@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaGithubSquare, FaTwitterSquare, FaBlogger } from 'react-icons/fa'
+
 import { Stack, Icon, Text, Center, Box, Square } from '@chakra-ui/react'
 
 import styles from './profile.module.css'
 import utilStyles from '../styles/utils.module.css'
+
+import { ProfileData } from './data/ProfileData'
 
 export const Profile = () => {
   return (
@@ -24,37 +26,39 @@ export const Profile = () => {
       </Text>
 
       <Stack direction="row">
-        <Link href="https://github.com/namekosiru">
-          <a className={styles.link}>
-            <Center bg="#333" className={styles.Center}>
-              <Icon as={FaGithubSquare} w={5} h={5} color="white" />
-              <Text fontSize="lg" color="white" pl={1}>
-                Github
-              </Text>
-            </Center>
-          </a>
-        </Link>
-        <Link href="https://twitter.com/Shinori0425">
-          <a className={styles.link}>
-            <Center bg="#00ACEE" className={styles.Center}>
-              <Icon as={FaTwitterSquare} w={5} h={5} color="white" />
-              <Text fontSize="lg" color="white" pl={1}>
-                Twitter
-              </Text>
-            </Center>
-          </a>
-        </Link>
-        <Link href="https://namekosiru.hatenablog.com/">
-          <a className={styles.link}>
-            <Center bg="#6cc644" className={styles.Center}>
-              <Icon as={FaBlogger} w={5} h={5} color="white" />
-              <Text fontSize="lg" color="white" pl={1}>
-                Blog
-              </Text>
-            </Center>
-          </a>
-        </Link>
+        {ProfileData.map((data, i) => (
+          <IconItem
+            key={i}
+            title={data.title}
+            bg={data.bg}
+            icon={data.icon}
+            url={data.url}
+          />
+        ))}
       </Stack>
     </Box>
+  )
+}
+
+type Icon = {
+  title: string
+  bg: string
+  icon: any
+  url: string
+}
+
+const IconItem = (props: Icon) => {
+  const { title, bg, icon, url } = props
+  return (
+    <Link href={url}>
+      <a className={styles.link}>
+        <Center bg={bg} className={styles.Center}>
+          <Icon as={icon} w={5} h={5} color="white" />
+          <Text fontSize="lg" color="white" pl={1}>
+            {title}
+          </Text>
+        </Center>
+      </a>
+    </Link>
   )
 }
