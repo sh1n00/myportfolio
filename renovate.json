@@ -1,5 +1,17 @@
 {
-  "extends": ["config:base", "group:allNonMajor"],
-  "labels": ["renovate"],
-  "automerge": true
+  "extends": ["config:base"],
+  "timezone": "Asia/Tokyo",
+  "enabledManagers": ["npm"],
+  "ignoreDeps": ["@types/node", "npm"],
+  "separateMultipleMajor": true,
+  "packageRules": [
+    {
+      "matchDepTypes": ["dependencies"],
+      "groupName": "dependencies"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "devDependencies"
+    }
+  ]
 }
